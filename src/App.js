@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/Header";
+import BookList from "./components/BookList";
+import NewBook from "./components/NewBook";
+import './index.css';
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      view: "books"
+    };
+    this.changeView = this.changeView.bind(this);
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  changeView(newView) {
+    this.setState({ view: newView });
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <nav>
+          <button
+            onClick={() => {
+              this.setState({ view: "books" });
+            }}
+          >
+            Book
+          </button>
+          <button
+            onClick={() => {
+              this.setState({ view: "new" });
+            }}
+          >
+            +
+          </button>
+          <button>memories</button>
+        </nav>
+        {this.state.view === "books" ? <BookList /> : null}
+        {this.state.view === "new" && <NewBook changeView={this.changeView} />}
+      </div>
+    );
+  }
 }
 
 export default App;
