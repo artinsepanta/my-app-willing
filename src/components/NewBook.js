@@ -44,7 +44,7 @@ export default class NewBook extends Component {
               .catch(error => {
                 console.log(error);
                 this.setState({
-                  error: "An error occurred, please try again."
+                 error: "An error occurred, please try again."
                 });
               });
           }
