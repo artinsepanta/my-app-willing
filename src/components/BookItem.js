@@ -15,7 +15,8 @@ export default class BookItem extends Component {
 
   handleClick = () => {
     axios
-      .put("/api/books/" + this.props.name, { name: this.state.newName })
+      //.put("/api/books/" + this.props.name, { newname: this.state.newName, name:this.props.name })
+      .put("/api/books/" + this.props.name, { name: this.state.newName }) //adding 2
       .then(response => {
         this.props.updatebooks(response.data);
       });
@@ -42,3 +43,4 @@ export default class BookItem extends Component {
     );
   }
 }
+

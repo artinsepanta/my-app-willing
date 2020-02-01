@@ -5,7 +5,7 @@ export default class NewBook extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      book: "",
       image: "",
       error: ""
     };
@@ -24,12 +24,21 @@ export default class NewBook extends Component {
           if (!this.state.image) {
             this.setState({ error: "Please insert an image" });
           } else {
+            /**
+             * axios.post('http://localhost:3000', employee)
+      .then(res => {
+          const persons = res.data;
+          this.setState({ persons });
+        })
+             */
+            
             axios
               .post("/api/books", {
                 name: this.state.name,
                 image: this.state.image
               })
               .then(response => {
+                console.log(response)
                 this.props.changeView("books");
               })
               .catch(error => {
@@ -42,10 +51,10 @@ export default class NewBook extends Component {
         }}
       >
         <input
-          name="book"
-          placeholder="book"
+          name="name"
+          placeholder="Book"
           onChange={this.handleChange}
-          value={this.state.book}
+          value={this.state.name}
         />
         <input
           name="image"

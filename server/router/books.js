@@ -1,16 +1,16 @@
-const express = require('express')
-const booksController = require('../controllers/books')
-const router = express.Router()
+// const express = require('express')
+// const bookController = require("../controllers/bookController");
+// const router = express.Router()
 
 
-router.get('/', booksController.getAllBooks)
+// router.get('/', bookController.getBooks)
+// router.get("/api/books", bookController.getBooks)
+// /*router.get('/:id', booksController.getBookById)*/
 
-router.get('/:id', booksController.getBookById)
+// router.post('/', bookController.addBook)
 
-router.post('/', booksController.addBook)
+// //router.put('/:id', booksController.updateBookById)
 
-router.put('/:id', booksController.updateBookById)
+// router.delete('/:name', bookController.deleteBookByName)
 
-router.delete('/:name', booksController.deleteBookByName)
-
-module.exports = router
+//  module.exports = router

@@ -3,12 +3,14 @@ import Header from "./components/Header";
 import BookList from "./components/BookList";
 import NewBook from "./components/NewBook";
 import './index.css';
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      view: "books"
-    };
+          this.state = {
+          view: "books"
+  }
+
     this.changeView = this.changeView.bind(this);
   }
 
@@ -16,13 +18,14 @@ class App extends Component {
     this.setState({ view: newView });
   }
 
+
   render() {
     return (
       <div>
         <Header />
-        <nav>
-          <button
-            onClick={() => {
+          <nav>
+            <button
+             onClick={() => {
               this.setState({ view: "books" });
             }}
           >
