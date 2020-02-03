@@ -1,0 +1,6 @@
+runtime: nodejs10
+
+env_variables:
+  CLOUD_INSTANCE: my-app-willing:us-central1:ins-my-app-willing
+  CLOUDSDK_CORE_PROJECT: root-alignment-256114
+  environment_variables:
